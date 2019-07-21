@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidAcademyHW</string>
+    <string name="position_name">First Mate of the Walrus</string>
+    <string name="special_description">Owns the map of the Flint</string>
+    <string name="hobby">Drink the Rum</string>
+    <string name="bio_text">William Manderly, better known as Billy Bones, was the Boatswain of the pirate ship Walrus.
+        After Gates became the captain of the Ranger he was promoted to Quartermaster.
+    </string>
+    <string name="enter_a_message">Enter a message...</string>
+    <string name="send_message">SEND MESSAGE</string>
+    <string name="no_app_found">No appliable app found</string>
+    <string name="title">Billie Bones</string>
+</resources>
