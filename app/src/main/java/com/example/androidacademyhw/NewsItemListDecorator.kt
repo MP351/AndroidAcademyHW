@@ -1,15 +1,15 @@
 package com.example.androidacademyhw
 
 import android.graphics.Rect
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
-class NewsItemListDecorator(val div: Int): RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+class NewsItemListDecorator(val div: Int): androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
         outRect.top = div
         outRect.bottom = div
-        if((parent.layoutManager as GridLayoutManager).spanCount == 1) {
+        if((parent.layoutManager as androidx.recyclerview.widget.GridLayoutManager).spanCount == 1) {
             portraitMarginSet(outRect)
         } else {
             landMarginSet(outRect, view)
@@ -17,7 +17,7 @@ class NewsItemListDecorator(val div: Int): RecyclerView.ItemDecoration() {
     }
 
     private fun landMarginSet(outRect: Rect, view: View) {
-        when ((view.layoutParams as GridLayoutManager.LayoutParams).spanIndex % 2) {
+        when ((view.layoutParams as androidx.recyclerview.widget.GridLayoutManager.LayoutParams).spanIndex % 2) {
             0 -> {
                 outRect.left = div
                 outRect.right = div/2
