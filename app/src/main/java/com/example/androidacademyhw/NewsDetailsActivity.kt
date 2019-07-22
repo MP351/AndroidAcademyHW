@@ -41,6 +41,7 @@ class NewsDetailsActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.detail_toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = news.category.name
     }
 
     companion object {
