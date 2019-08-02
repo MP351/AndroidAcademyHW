@@ -20,8 +20,8 @@ class NewsAdapter(val context: Context): ListAdapter<NewsItem, androidx.recycler
 
     init {
         val requestOptions = RequestOptions()
-            .placeholder(R.drawable.placeholder)
-            .fallback(R.drawable.placeholder)
+            .placeholder(R.drawable.ic_photo_size_select_actual_black_24dp)
+            .fallback(R.drawable.ic_photo_size_select_actual_black_24dp)
             .centerCrop()
 
         imageLoader = Glide.with(context).applyDefaultRequestOptions(requestOptions)

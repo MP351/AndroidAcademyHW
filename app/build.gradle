@@ -44,4 +44,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
 
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
+
+    implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC1"
 }

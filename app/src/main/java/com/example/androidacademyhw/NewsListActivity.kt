@@ -1,5 +1,8 @@
 package com.example.androidacademyhw
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +11,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidacademyhw.data.DataUtils
 import com.example.androidacademyhw.data.NewsItem
@@ -38,8 +43,8 @@ class NewsListActivity : AppCompatActivity(), NewsAdapter.OnClickListener {
 
         rv = findViewById(R.id.rv)
         rv.layoutManager = when (this.resources.configuration.orientation) {
-            Configuration.ORIENTATION_PORTRAIT-> androidx.recyclerview.widget.GridLayoutManager(this, 1)
-            else -> androidx.recyclerview.widget.GridLayoutManager(this, 2)
+            Configuration.ORIENTATION_PORTRAIT-> GridLayoutManager(this, 1)
+            else -> GridLayoutManager(this, 2)
         }
         val adapter = NewsAdapter(this)
 
@@ -75,5 +80,13 @@ class NewsListActivity : AppCompatActivity(), NewsAdapter.OnClickListener {
         super.onStop()
 
         job.cancel()
+    }
+
+    companion object {
+        fun startActivity(activity: Activity) {
+            val intent = Intent(activity, NewsListActivity::class.java)
+            activity.startActivity(intent)
+            activity.finish()
+        }
     }
 }
