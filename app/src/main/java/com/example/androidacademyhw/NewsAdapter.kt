@@ -15,7 +15,7 @@ import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.example.androidacademyhw.data.NewsItem
 
-class NewsAdapter(val context: Context): ListAdapter<NewsItem, androidx.recyclerview.widget.RecyclerView.ViewHolder>(NewsItemCallback()) {
+class NewsAdapter(val context: Context): ListAdapter<NewsItem, RecyclerView.ViewHolder>(NewsItemCallback()) {
     private val imageLoader: RequestManager
 
     init {
@@ -27,15 +27,15 @@ class NewsAdapter(val context: Context): ListAdapter<NewsItem, androidx.recycler
         imageLoader = Glide.with(context).applyDefaultRequestOptions(requestOptions)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return VH(LayoutInflater.from(context).inflate(R.layout.item_news, parent, false), imageLoader)
     }
 
-    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as VH).bind(getItem(position), context as OnClickListener)
     }
 
-    class VH (view: View, private val imageLoader: RequestManager): androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
+    class VH (view: View, private val imageLoader: RequestManager): RecyclerView.ViewHolder(view) {
         private val tvCat     = view.findViewById<TextView>(R.id.tv_item_category)
         private val tvHeader  = view.findViewById<TextView>(R.id.tv_item_header)
         private val tvPreview = view.findViewById<TextView>(R.id.tv_item_preview)
